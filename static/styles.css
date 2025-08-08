@@ -1,0 +1,36 @@
+body{
+    background-color: black;
+}
+
+h2{
+    color: white;
+}
+
+form{
+    color: white;
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: auto;
+    width: 300px;
+    align-items: center;
+    text-align: center;
+}
+
+input{
+    margin-top: 20px;
+}
+
+.operacao{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.resultado{
+    background-color: rgb(29, 22, 22);
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 20px;
+}
