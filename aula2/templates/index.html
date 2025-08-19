@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Adicionar nova tarefa</h1>
+
+    <form action="/criar" method="post">
+        <input type="text" name="descricao" required>
+        <button type="submit">confirmar</button>
+    </form>
+
+    <h1>Deletar tarefa</h1>
+    <form action="/deletar" method="post">
+        <input type="text" name="descricao" required placeholder="Digite o nome da tarefa">
+        <button type="submit">deletar</button>
+    </form>
+
+    <h1>Lista de tarefas</h1>
+    <ul>
+        {% for task in tarefas %}
+        <li>
+            {{ task.id }} - {{ task.descricao }}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
