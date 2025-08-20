@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Criar</h1>
+
+    <form action="/criar" method="post" class="criar">
+        <input type="text" name="nome_paciente" required placeholder="Digite o nome do paciente">
+        <input type="text" name="nome_medico" required placeholder="Digite o nome do médico">
+        <input type="text" name="especialidade" required placeholder="Digite a especialidade">
+        <input type="datetime-local" name="data_consulta" required class="data">
+        <button type="submit">Confirmar</button>
+    </form>
+
+    <h1>Editar</h1>
+
+    <form action="/editar" method="post" class="editar">
+        <input type="text" name="id" required placeholder="ID da tarefa">
+        <input type="text" name="nome_paciente" required placeholder="Novo nome do paciente">
+        <input type="text" name="nome_medico" required placeholder="Novo nome do médico">
+        <input type="text" name="especialidade" required placeholder="Nova  especialidade">
+        <input type="datetime-local" name="data_consulta" required class="data">
+        <button type="submit">Editar</button>
+    </form>
+
+    <h1>Deletar tarefa</h1>
+    <form action="/deletar" method="post" class="deletar">
+        <input type="text" name="id" required placeholder="Digite o id do paciente">
+        <button type="submit">Deletar</button>
+    </form>
+
+    <h1>Pesquisar</h1>
+
+    <form action="/pesquisar" method="post" class="pesquisar">
+        <input type="text" name="nome_paciente" required placeholder="Digite o nome do paciente">
+        <div class="botoes-pesquisar">
+            <button type="submit">Pesquisar</button>
+            <a href="/" style="margin-left:10px;">
+                <button type="button">Mostrar Todos</button>
+            </a>
+        </div>
+    </form>
+
+    <ul class="tabela">
+        {% for task in tarefas %}
+        <li>
+            {{ task.id }} - {{ task.nome_paciente }} - {{ task.nome_medico }} - {{ task.especialidade }} - {{ task.data_consulta }}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
