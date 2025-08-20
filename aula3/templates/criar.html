@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+    <title>Criar Tarefa</title>
+</head>
+<body>
+    
+    <div class="menu-links">
+        <a href="{{ url_for('index') }}">Retornar</a>
+    </div>
+
+    <h1>Criar</h1>
+
+    <form action="/criar" method="post" class="criar">
+        <input type="text" name="nome_paciente" required placeholder="Digite o nome do paciente">
+        <input type="text" name="nome_medico" required placeholder="Digite o nome do médico">
+        <input type="text" name="especialidade" required placeholder="Digite a especialidade">
+        <input type="datetime-local" name="data_consulta" required class="data">
+        <button type="submit">Confirmar</button>
+    </form>
+</body>
+</html>

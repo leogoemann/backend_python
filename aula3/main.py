@@ -20,6 +20,18 @@ def index():
     tarefas = Tarefas.query.all()
     return render_template('index.html', tarefas=tarefas)
 
+@app.route('/criar')
+def criar():
+    return render_template('criar.html')
+
+@app.route('/editar')
+def editar():
+    return render_template('editar.html')
+
+@app.route('/deletar')
+def deletar():
+    return render_template('deletar.html')
+
 @app.route('/criar', methods=['POST'])
 def criar_tarefas():
     nome_paciente = request.form['nome_paciente']
@@ -66,9 +78,9 @@ def deletar_tarefas():
 @app.route('/pesquisar', methods=['POST'])
 def pesquisar_tarefas():
     nome_paciente = request.form['nome_paciente']
-    tarefa = Tarefas.query.filter_by(nome_paciente=nome_paciente).first()
-    if tarefa:
-        return render_template('index.html', tarefas=[tarefa])
+    tarefas = Tarefas.query.filter_by(nome_paciente=nome_paciente).all()
+    if tarefas:
+        return render_template('index.html', tarefas=tarefas)
     return redirect('/')
 
 if __name__ == '__main__':

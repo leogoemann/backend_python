@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="menu-links">
+        <a href="{{ url_for('index') }}">Retornar</a>
+    </div>
+
+    <h1>Editar</h1>
+
+    <form action="/editar" method="post" class="editar">
+        <input type="text" name="id" required placeholder="ID da tarefa">
+        <input type="text" name="nome_paciente" required placeholder="Novo nome do paciente">
+        <input type="text" name="nome_medico" required placeholder="Novo nome do médico">
+        <input type="text" name="especialidade" required placeholder="Nova  especialidade">
+        <input type="datetime-local" name="data_consulta" required class="data">
+        <button type="submit">Editar</button>
+    </form>
+    
+</body>
+</html>

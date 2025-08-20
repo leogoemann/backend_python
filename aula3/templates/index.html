@@ -7,32 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Criar</h1>
+    <div class="menu-links">
+        <a href="{{ url_for('criar') }}">Criar</a>
+        <a href="{{ url_for('editar') }}">Editar</a>
+        <a href="{{ url_for('deletar') }}">Deletar</a>
+    </div>
 
-    <form action="/criar" method="post" class="criar">
-        <input type="text" name="nome_paciente" required placeholder="Digite o nome do paciente">
-        <input type="text" name="nome_medico" required placeholder="Digite o nome do médico">
-        <input type="text" name="especialidade" required placeholder="Digite a especialidade">
-        <input type="datetime-local" name="data_consulta" required class="data">
-        <button type="submit">Confirmar</button>
-    </form>
+    
 
-    <h1>Editar</h1>
-
-    <form action="/editar" method="post" class="editar">
-        <input type="text" name="id" required placeholder="ID da tarefa">
-        <input type="text" name="nome_paciente" required placeholder="Novo nome do paciente">
-        <input type="text" name="nome_medico" required placeholder="Novo nome do médico">
-        <input type="text" name="especialidade" required placeholder="Nova  especialidade">
-        <input type="datetime-local" name="data_consulta" required class="data">
-        <button type="submit">Editar</button>
-    </form>
-
-    <h1>Deletar tarefa</h1>
-    <form action="/deletar" method="post" class="deletar">
-        <input type="text" name="id" required placeholder="Digite o id do paciente">
-        <button type="submit">Deletar</button>
-    </form>
+    
 
     <h1>Pesquisar</h1>
 

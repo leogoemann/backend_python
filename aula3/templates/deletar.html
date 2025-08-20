@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="menu-links">
+        <a href="{{ url_for('index') }}">Retornar</a>
+    </div>
+
+    <h1>Deletar</h1>
+    <form action="/deletar" method="post" class="deletar">
+        <input type="text" name="id" required placeholder="Digite o id do paciente">
+        <button type="submit">Deletar</button>
+    </form>
+    
+</body>
+</html>
